@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",        // ← ini yang ditambahkan
+    "postbuild": "next-sitemap",       
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
