@@ -11,6 +11,8 @@ export const metadata = {
   description: 'Program tabungan emas untuk umroh/haji khusus (ONH Plus)',
 };
 
+import { AuthProvider } from '@/hooks/useAuth';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" suppressHydrationWarning>
