@@ -1,13 +1,16 @@
-export default function CaraKerja() {
+import CTA from "@/components/CTA";
+
+export default function CaraKerjaPage() {
   return (
-    <div className="prose dark:prose-invert mx-auto">
-      <h2>Cara Kerja Program</h2>
-      <ol>
-        <li>Daftar dengan email/nomor HP</li>
-        <li>Verifikasi & login ke dashboard</li>
-        <li>Setor emas & unggah bukti</li>
-        <li>Dapatkan laporan & sertifikat</li>
+    <div>
+      <h1 className="text-3xl font-bold mb-4">Cara Kerja</h1>
+      <ol className="list-decimal list-inside space-y-2 mb-6">
+        <li>Daftar akun dan lengkapi data.</li>
+        <li>Lakukan cicilan emas melalui kami.</li>
+        <li>Saldo emas tercatat dan dapat dipantau.</li>
+        <li>Jika mencapai target, jemaah dapat diberangkatkan Umroh/Haji.</li>
       </ol>
+      <CTA />
     </div>
   );
 }
