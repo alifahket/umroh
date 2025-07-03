@@ -1,9 +1,20 @@
-export default function FAQ() {
+import CTA from "@/components/CTA";
+
+export default function FaqPage() {
   return (
-    <div className="prose dark:prose-invert mx-auto">
-      <h2>FAQ / Bantuan</h2>
-      <p><strong>Q:</strong> Apakah tabungan saya aman?<br /><strong>A:</strong> Ya, emas disimpan di Pegadaian langsung.</p>
-      <p><strong>Q:</strong> Bisa setor lewat transfer?<br /><strong>A:</strong> Ya, lalu unggah bukti melalui dashboard.</p>
+    <div>
+      <h1 className="text-3xl font-bold mb-4">FAQ & Bantuan</h1>
+      <div className="space-y-4 mb-6">
+        <div>
+          <h2 className="font-semibold">Apakah tabungan ini halal?</h2>
+          <p>Ya, program mengikuti akad syariah seperti Murabahah dan Wadiah.</p>
+        </div>
+        <div>
+          <h2 className="font-semibold">Apakah emas disimpan secara fisik?</h2>
+          <p>Ya, emas disimpan di lembaga resmi (mitra Pegadaian atau koperasi syariah).</p>
+        </div>
+      </div>
+      <CTA />
     </div>
   );
 }
