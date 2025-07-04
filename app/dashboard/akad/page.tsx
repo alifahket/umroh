@@ -1,5 +1,8 @@
-"use client";
-import { useState } from "react";
+'use client';
+
+import { useState } from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PerjanjianPDF } from '@/lib/perjanjian';
 
 const sampleData = {
   nama: "Ahmad Fadli",
@@ -22,6 +25,7 @@ export default function AkadMurabahahPage() {
   return (
     <div className="max-w-3xl mx-auto space-y-6 py-8">
       <h1 className="text-2xl font-bold">Perjanjian Murabahah</h1>
+
       <div className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 p-6 rounded border">
         <p>Nomor: <strong>{sampleData.nomor}</strong></p>
         <p>Tanggal: <strong>{sampleData.tanggal}</strong></p>
@@ -37,7 +41,7 @@ export default function AkadMurabahahPage() {
         <p>Email: {sampleData.email}</p>
 
         <h3>Pasal 1 — Akad</h3>
-        <p>PIHAK PERTAMA menjual emas kepada PIHAK KEDUA secara cicilan dengan akad Murabahah...</p>
+        <p>PIHAK PERTAMA menjual emas kepada PIHAK KEDUA secara cicilan dengan akad Murabahah.</p>
 
         <h3>Pasal 2 — Pembayaran</h3>
         <p>PIHAK KEDUA akan mencicil sebesar Rp300.000/bulan selama 10 bulan untuk 1 gram emas.</p>
@@ -59,6 +63,18 @@ export default function AkadMurabahahPage() {
       ) : (
         <div className="text-green-600 text-center font-semibold">
           ✅ Anda telah menyetujui perjanjian ini secara digital.
+        </div>
+      )}
+
+      {disetujui && (
+        <div className="mt-6 text-center">
+          <PDFDownloadLink
+            document={<PerjanjianPDF data={sampleData} />}
+            fileName={`perjanjian-${sampleData.nama}.pdf`}
+            className="text-blue-600 underline"
+          >
+            Unduh Salinan Perjanjian (PDF)
+          </PDFDownloadLink>
         </div>
       )}
     </div>
